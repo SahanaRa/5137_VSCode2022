@@ -7,7 +7,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.OffIntake_Command;
+import frc.robot.commands.OnIntake_Command;
+import frc.robot.commands.ReversedOnIntake_Command;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Intake_Subsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -22,9 +26,13 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
+  public static Intake_Subsystem intake_Subsystem;
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
+
+    intake_Subsystem = new Intake_Subsystem(); 
     configureButtonBindings();
   }
 
